@@ -11,6 +11,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 // For theoretical discussion, please see the accompanying notes or chat.
 // Key differences v5 vs v6:
@@ -22,19 +23,32 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/products/:id" element={<ProductDetailPage />} />
+      <div className="app-container">
+        <Navbar />
         
-        {/* Example of a redirect: if someone goes to /home, redirect to / */}
-        <Route path="/home" element={<Navigate to="/" replace />} />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/products/:id" element={<ProductDetailPage />} />
+          
+          {/* Example of a redirect: if someone goes to /home, redirect to / */}
+          <Route path="/home" element={<Navigate to="/" replace />} />
 
-        {/* Catch-all for 404 Not Found (Optional but good practice) */}
-        <Route path="*" element={<div><h2>404 Not Found</h2><p>The page you are looking for does not exist.</p></div>} />
-      </Routes>
+          {/* Catch-all for 404 Not Found (Optional but good practice) */}
+          <Route path="*" element={
+            <div className="main-content">
+              <div className="container">
+                <h2>404 Not Found</h2>
+                <p>The page you are looking for does not exist.</p>
+                <p>Try navigating back to <a href="/">Home</a></p>
+              </div>
+            </div>
+          } />
+        </Routes>
+        
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }

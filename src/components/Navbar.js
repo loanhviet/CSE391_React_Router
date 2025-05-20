@@ -1,38 +1,47 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const goToContact = () => {
     navigate('/contact'); // Example of programmatic navigation
   };
 
+  // Determine which menu item is active based on current path
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+
   return (
     <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          {/* Using Link component for Contact */}
-          {/* <Link to="/contact">Contact</Link> */}
-          
-          {/* Using programmatic navigation for Contact */}
-          <button onClick={goToContact}>Contact (Programmatic)</button>
-        </li>
-        <li>
-          <Link to="/products/1">Product 1 (Example)</Link>
-        </li>
-        <li>
-          <Link to="/products/2">Product 2 (Example)</Link>
-        </li>
-      </ul>
-      <hr />
-      <p><em>Note on useNavigate:</em> The 'Contact (Programmatic)' button uses <code>useNavigate</code> hook for navigation.</p>
+      <div className="navbar-container">
+        <Link to="/" className="brand">React Router Demo</Link>
+        
+        <ul>
+          <li className={isActive('/') ? 'active' : ''}>
+            <Link to="/">Home</Link>
+          </li>
+          <li className={isActive('/about') ? 'active' : ''}>
+            <Link to="/about">About</Link>
+          </li>
+          <li className={isActive('/contact') ? 'active' : ''}>
+            <button onClick={goToContact}>Contact</button>
+          </li>
+          <li className={isActive('/products/1') ? 'active' : ''}>
+            <Link to="/products/1">Product 1</Link>
+          </li>
+          <li className={isActive('/products/2') ? 'active' : ''}>
+            <Link to="/products/2">Product 2</Link>
+          </li>
+        </ul>
+      </div>
+      
+      {/* Technical note - visible only in Contact page to highlight useNavigate */}
+      {isActive('/contact') && (
+        <p><em>Note:</em> The 'Contact' navigation button uses <code>useNavigate</code> hook for programmatic routing.</p>
+      )}
     </nav>
   );
 }
