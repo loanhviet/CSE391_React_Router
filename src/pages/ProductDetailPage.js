@@ -34,7 +34,7 @@ function ProductDetailPage() {
   };
 
   return (
-    <div className="main-content">
+    <div className="main-content page-transition">
       <div className="container">
         <header className="page-header">
           <h1>{product.name}</h1>
@@ -66,27 +66,27 @@ function ProductDetailPage() {
         
         {/* Tech showcase - Dynamic Routes */}
         <div className="tech-showcase">
-          <h3>Technical Highlight: Route Parameters</h3>
-          <p>This page demonstrates <code>useParams</code>, a React Router hook that gives you access to the dynamic parts of the URL.</p>
+          <h3>Điểm nổi bật kỹ thuật: Route Parameters</h3>
+          <p>Trang này minh họa <code>useParams</code>, một hook của React Router giúp truy cập các phần động trong URL.</p>
           
           <pre>
-            <code>{`// In your Route definition
+            <code>{`// Trong định nghĩa Route
 <Route path="/products/:id" element={<ProductDetailPage />} />
 
-// In your component
+// Trong component
 import { useParams } from 'react-router-dom';
 
 function ProductDetailPage() {
-  const { id } = useParams(); // id will be "${id}" in this case
+  const { id } = useParams(); // id sẽ là "${id}" trong trường hợp này
   // ...
 }`}</code>
           </pre>
           
-          <p>Try changing the URL to see different products:</p>
+          <p>Thử thay đổi URL để xem các sản phẩm khác nhau:</p>
           <ul>
-            <li><button onClick={() => navigate('/products/1')} style={{background: 'none', border: 'none', color: '#3498db', textDecoration: 'underline', cursor: 'pointer', padding: 0}}>Product 1</button></li>
-            <li><button onClick={() => navigate('/products/2')} style={{background: 'none', border: 'none', color: '#3498db', textDecoration: 'underline', cursor: 'pointer', padding: 0}}>Product 2</button></li>
-            <li><button onClick={() => navigate('/products/3')} style={{background: 'none', border: 'none', color: '#3498db', textDecoration: 'underline', cursor: 'pointer', padding: 0}}>Product 3 (Not Found)</button></li>
+            <li><button onClick={() => navigate('/products/1')} style={{background: 'none', border: 'none', color: '#3498db', textDecoration: 'underline', cursor: 'pointer', padding: 0}}>Sản phẩm 1</button></li>
+            <li><button onClick={() => navigate('/products/2')} style={{background: 'none', border: 'none', color: '#3498db', textDecoration: 'underline', cursor: 'pointer', padding: 0}}>Sản phẩm 2</button></li>
+            <li><button onClick={() => navigate('/products/3')} style={{background: 'none', border: 'none', color: '#3498db', textDecoration: 'underline', cursor: 'pointer', padding: 0}}>Sản phẩm 3 (Không tìm thấy)</button></li>
           </ul>
         </div>
       </div>

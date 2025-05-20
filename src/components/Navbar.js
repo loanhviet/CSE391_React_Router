@@ -40,7 +40,7 @@ function Navbar() {
       
       {/* Technical note - visible only in Contact page to highlight useNavigate */}
       {isActive('/contact') && (
-        <p><em>Note:</em> The 'Contact' navigation button uses <code>useNavigate</code> hook for programmatic routing.</p>
+        <p><em>Ghi chú:</em> Nút 'Contact' ở trên sử dụng hook <code>useNavigate</code> để thực hiện điều hướng có lập trình.</p>
       )}
     </nav>
   );

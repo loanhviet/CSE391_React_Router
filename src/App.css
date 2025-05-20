@@ -383,4 +383,42 @@ nav p {
   .col {
     margin-bottom: 20px;
   }
+}
+
+/* Hiệu ứng chuyển trang */
+.page-transition {
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Breadcrumb styles */
+.breadcrumb {
+  padding: 10px 0;
+  margin-bottom: 20px;
+  color: #777;
+  font-size: 0.9em;
+}
+
+.breadcrumb a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* Code display improvements */
+.code-highlight {
+  background-color: #ffff0030;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+.code-comment {
+  color: #6a8759;
 } 

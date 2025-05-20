@@ -4,7 +4,8 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Navigate
+  Navigate,
+  Link
 } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -12,6 +13,7 @@ import ContactPage from './pages/ContactPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Breadcrumb from './components/Breadcrumb';
 
 // For theoretical discussion, please see the accompanying notes or chat.
 // Key differences v5 vs v6:
@@ -26,6 +28,10 @@ function App() {
       <div className="app-container">
         <Navbar />
         
+        <div className="container">
+          <Breadcrumb />
+        </div>
+        
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -37,11 +43,11 @@ function App() {
 
           {/* Catch-all for 404 Not Found (Optional but good practice) */}
           <Route path="*" element={
-            <div className="main-content">
+            <div className="main-content page-transition">
               <div className="container">
-                <h2>404 Not Found</h2>
-                <p>The page you are looking for does not exist.</p>
-                <p>Try navigating back to <a href="/">Home</a></p>
+                <h2>404 Không Tìm Thấy</h2>
+                <p>Trang bạn đang tìm kiếm không tồn tại.</p>
+                <p>Thử quay lại <Link to="/">Trang chủ</Link></p>
               </div>
             </div>
           } />

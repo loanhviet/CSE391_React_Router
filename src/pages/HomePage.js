@@ -5,7 +5,7 @@ function HomePage() {
   const navigate = useNavigate();
   
   return (
-    <div className="main-content">
+    <div className="main-content page-transition">
       <div className="container">
         <header className="page-header">
           <h1>Welcome to React Router Demo</h1>
@@ -38,11 +38,11 @@ function HomePage() {
         
         {/* Tech Showcase */}
         <div className="tech-showcase">
-          <h3>React Router Key Features</h3>
+          <h3>Tính năng chính của React Router</h3>
           <ul>
-            <li><strong>Declarative Routing:</strong> Define routes using JSX syntax with the <code>&lt;Route&gt;</code> component.</li>
-            <li><strong>Dynamic Routing:</strong> Routes can render different components based on URL parameters. Try our <Link to="/products/1">product pages</Link> to see this in action.</li>
-            <li><strong>Programmatic Navigation:</strong> Use the <code>useNavigate</code> hook to navigate to routes from JavaScript. See our <button onClick={() => navigate('/contact')} style={{ background: 'none', border: 'none', color: '#3498db', textDecoration: 'underline', padding: 0, cursor: 'pointer' }}>Contact page</button> for a demonstration.</li>
+            <li><strong>Định tuyến khai báo:</strong> Định nghĩa routes sử dụng cú pháp JSX với component <code>&lt;Route&gt;</code>.</li>
+            <li><strong>Định tuyến động:</strong> Routes có thể hiển thị các component khác nhau dựa trên tham số URL. Hãy thử các <Link to="/products/1">trang sản phẩm</Link> để xem hoạt động này.</li>
+            <li><strong>Điều hướng lập trình:</strong> Sử dụng hook <code>useNavigate</code> để điều hướng từ JavaScript. Xem <button onClick={() => navigate('/contact')} style={{ background: 'none', border: 'none', color: '#3498db', textDecoration: 'underline', padding: 0, cursor: 'pointer' }}>trang Contact</button> để xem minh họa.</li>
           </ul>
         </div>
         
@@ -52,10 +52,11 @@ function HomePage() {
           <div className="col">
             <div className="card">
               <h3>Nested Routes</h3>
-              <p>React Router v6 makes it easy to create nested routes, where child routes render within a parent component.</p>
+              <p>React Router v6 giúp dễ dàng tạo các routes lồng nhau, nơi các routes con được hiển thị trong component cha.</p>
               <pre>
                 <code>
                   {`<Route path="/dashboard" element={<Dashboard />}>
+  <Route index element={<DashboardHome />} />
   <Route path="profile" element={<Profile />} />
 </Route>`}
                 </code>
@@ -66,7 +67,7 @@ function HomePage() {
           <div className="col">
             <div className="card">
               <h3>Route Parameters</h3>
-              <p>Extract dynamic values from the URL using the useParams hook.</p>
+              <p>Trích xuất giá trị động từ URL bằng hook useParams.</p>
               <pre>
                 <code>
                   {`// URL: /products/1
@@ -80,11 +81,11 @@ const { id } = useParams();
           <div className="col">
             <div className="card">
               <h3>Redirects</h3>
-              <p>Easily redirect users with the Navigate component.</p>
+              <p>Dễ dàng chuyển hướng người dùng với component Navigate.</p>
               <pre>
                 <code>
-                  {`<Route path="/old-page" element={
-  <Navigate to="/new-page" replace />
+                  {`<Route path="/old-path" element={
+  <Navigate to="/new-path" replace />
 } />`}
                 </code>
               </pre>

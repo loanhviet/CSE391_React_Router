@@ -32,7 +32,7 @@ function ContactPage() {
   };
 
   return (
-    <div className="main-content">
+    <div className="main-content page-transition">
       <div className="container">
         <header className="page-header">
           <h1>Contact Us</h1>
@@ -112,47 +112,47 @@ function ContactPage() {
             
             <div className="col">
               <div className="tech-showcase">
-                <h3>Technical Highlight: useNavigate Hook</h3>
-                <p>This page demonstrates programmatic navigation using the <code>useNavigate</code> hook from React Router v6.</p>
+                <h3>Điểm nổi bật kỹ thuật: Hook useNavigate</h3>
+                <p>Trang này minh họa điều hướng có lập trình sử dụng hook <code>useNavigate</code> của React Router v6.</p>
                 
                 <pre>
-                  <code>{`// Import the hook
+                  <code>{`// Import hook
 import { useNavigate } from 'react-router-dom';
 
 function ContactPage() {
-  // Initialize the navigate function
+  // Khởi tạo function navigate
   const navigate = useNavigate();
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Process form data...
+    // Xử lý dữ liệu form...
     
-    // Redirect after submission (with delay)
+    // Chuyển hướng sau khi gửi (có độ trễ)
     setTimeout(() => {
-      navigate('/'); // Navigate to home
+      navigate('/'); // Chuyển đến trang chủ
     }, 3000);
   };
   
-  // You can also navigate to other routes
+  // Bạn cũng có thể điều hướng đến các route khác
   const goToProducts = () => {
     navigate('/products/1');
   };
   
-  // Or go back/forward in history
+  // Hoặc quay lại/tiến tới trong lịch sử
   const goBack = () => {
-    navigate(-1); // Equivalent to browser's back button
+    navigate(-1); // Tương đương nút back của trình duyệt
   };
 }`}</code>
                 </pre>
                 
                 <div className="row">
                   <div className="col">
-                    <h4>Navigation Examples:</h4>
+                    <h4>Ví dụ điều hướng:</h4>
                     <button className="btn btn-primary" onClick={() => navigate('/')}>
-                      Go to Home
+                      Về trang chủ
                     </button>{' '}
                     <button className="btn btn-primary" onClick={() => navigate(-1)}>
-                      Go Back
+                      Quay lại
                     </button>
                   </div>
                 </div>

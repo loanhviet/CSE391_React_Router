@@ -37,7 +37,7 @@ function Footer() {
       </div>
       
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} React Router Demo. Created for educational purposes.</p>
+        <p>&copy; {new Date().getFullYear()} React Router Demo. CES391 65TTNT.</p>
       </div>
     </footer>
   );
