@@ -14,9 +14,15 @@
 - **Điều hướng lập trình**: Sử dụng hook `useNavigate`
 - **Tham số đường dẫn**: Sử dụng cú pháp `:paramName` và hook `useParams`
 - **Chuyển hướng**: Sử dụng component `Navigate`
+- **Routes lồng nhau (Nested Routes)**: Sử dụng `Outlet` để hiển thị route con trong route cha
+- **Breadcrumb Navigation**: Điều hướng theo dấu vết giúp người dùng hiểu vị trí hiện tại
+- **Trang Not Found (404)**: Xử lý các đường dẫn không tồn tại
+- **Search Params**: Sử dụng `useSearchParams` để xử lý các tham số tìm kiếm trong URL
+- **Protected Routes**: Demo về cách bảo vệ các route yêu cầu xác thực
 - **Giao diện người dùng chuyên nghiệp** với:
   - Thanh điều hướng (Navbar)
   - Trang chủ với sản phẩm nổi bật
+  - Trang Dashboard với nested routes
   - Trang giới thiệu
   - Trang liên hệ với form
   - Trang chi tiết sản phẩm (với tham số động)
@@ -26,13 +32,20 @@
 ```
 src/
   ├── components/
+  │   ├── Breadcrumb.js
+  │   ├── DashboardLayout.js
   │   ├── Footer.js
   │   └── Navbar.js
   ├── pages/
   │   ├── AboutPage.js
   │   ├── ContactPage.js
   │   ├── HomePage.js
-  │   └── ProductDetailPage.js
+  │   ├── ProductDetailPage.js
+  │   └── dashboard/
+  │       ├── Overview.js
+  │       ├── Analytics.js
+  │       ├── Settings.js
+  │       └── Profile.js
   ├── App.css
   ├── App.js
   └── index.js
@@ -60,6 +73,14 @@ src/
    ```
 
 5. Mở trình duyệt và truy cập: `http://localhost:3000`
+
+## Hướng dẫn demo
+1. **Điều hướng cơ bản**: Click các link trên thanh navigation để di chuyển giữa các trang
+2. **Route Parameters**: Xem sản phẩm chi tiết từ trang chủ, chú ý URL thay đổi (vd: `/products/1`)
+3. **Nested Routes**: Truy cập dashboard để thấy ví dụ về routes lồng nhau
+4. **Breadcrumbs**: Chú ý breadcrumb thay đổi khi điều hướng giữa các trang
+5. **Trang Not Found**: Thử truy cập một URL không tồn tại để xem trang 404
+6. **Điều hướng lập trình**: Sử dụng các nút "Thêm vào giỏ hàng" hoặc "Quay lại" để thấy điều hướng bằng mã
 
 ## Các khái niệm kỹ thuật
 
@@ -114,9 +135,45 @@ const { id } = useParams();  // id sẽ là giá trị động từ URL
 <Route path="/old-path" element={<Navigate to="/new-path" replace />} />
 ```
 
+#### `Outlet`
+```jsx
+// Trong component cha
+<div className="layout">
+  <h1>Dashboard</h1>
+  <nav>
+    <Link to="/dashboard">Overview</Link>
+    <Link to="/dashboard/analytics">Analytics</Link>
+    <Link to="/dashboard/settings">Settings</Link>
+  </nav>
+  
+  {/* Route con sẽ render ở đây */}
+  <Outlet />
+</div>
+```
+
+#### `useSearchParams`
+```jsx
+const [searchParams, setSearchParams] = useSearchParams();
+const query = searchParams.get('search');
+
+// Cập nhật query parameter
+setSearchParams({ search: 'new-value' });
+```
+
 ## Tài nguyên học tập
 - [React Router v6 Official Documentation](https://reactrouter.com/en/main)
 - [React Router v6 Tutorial](https://reactrouter.com/en/main/start/tutorial)
+
+## Nội dung demo
+1. **Giới thiệu tổng quan**: React Router là thư viện điều hướng tiêu chuẩn cho React, giúp tạo Single Page Application có điều hướng mượt mà.
+2. **Điều hướng cơ bản**: Demo về BrowserRouter, Routes, Route và Link.
+3. **Route lồng nhau**: Demo Dashboard với nhiều tab con sử dụng Outlet.
+4. **Route Parameters**: Demo trang chi tiết sản phẩm với URL động.
+5. **Programmatic Navigation**: Demo điều hướng bằng mã với useNavigate.
+6. **Breadcrumb Navigation**: Demo breadcrumb thay đổi theo URL hiện tại.
+7. **404 Not Found**: Demo xử lý route không tồn tại.
+8. **Search Params**: Demo tìm kiếm sản phẩm với query parameters.
+9. **Protected Routes**: Demo về route được bảo vệ cần quyền truy cập.
 
 ---
 
