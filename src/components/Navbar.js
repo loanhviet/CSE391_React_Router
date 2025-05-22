@@ -101,6 +101,11 @@ function Navbar() {
                 </li>
               </ul>
             </li>
+            <li className={isActive('/dashboard') ? 'active' : ''}>
+              <Link to="/dashboard" onClick={() => setMobileMenuOpen(false)}>
+                <i className="nav-icon">📊</i> Dashboard
+              </Link>
+            </li>
           </ul>
           
           <form className="search-form" onSubmit={handleSearch}>

@@ -43,6 +43,7 @@ function HomePage() {
             <li><strong>Định tuyến khai báo:</strong> Định nghĩa routes sử dụng cú pháp JSX với component <code>&lt;Route&gt;</code>.</li>
             <li><strong>Định tuyến động:</strong> Routes có thể hiển thị các component khác nhau dựa trên tham số URL. Hãy thử các <Link to="/products/1">trang sản phẩm</Link> để xem hoạt động này.</li>
             <li><strong>Điều hướng lập trình:</strong> Sử dụng hook <code>useNavigate</code> để điều hướng từ JavaScript. Xem <button onClick={() => navigate('/contact')} style={{ background: 'none', border: 'none', color: '#3498db', textDecoration: 'underline', padding: 0, cursor: 'pointer' }}>trang Contact</button> để xem minh họa.</li>
+            <li><strong>Định tuyến lồng nhau (Nested Routes):</strong> Xem <Link to="/dashboard">Dashboard</Link> để xem cách kết hợp nhiều routes con trong một route cha sử dụng <code>Outlet</code>.</li>
           </ul>
         </div>
         
@@ -52,15 +53,17 @@ function HomePage() {
           <div className="col">
             <div className="card">
               <h3>Nested Routes</h3>
-              <p>React Router v6 giúp dễ dàng tạo các routes lồng nhau, nơi các routes con được hiển thị trong component cha.</p>
+              <p>React Router v6 giúp dễ dàng tạo các routes lồng nhau, nơi các routes con được hiển thị trong component cha sử dụng <code>Outlet</code>.</p>
               <pre>
                 <code>
-                  {`<Route path="/dashboard" element={<Dashboard />}>
-  <Route index element={<DashboardHome />} />
-  <Route path="profile" element={<Profile />} />
+                  {`<Route path="/dashboard" element={<DashboardLayout />}>
+  <Route index element={<Overview />} />
+  <Route path="analytics" element={<Analytics />} />
+  <Route path="settings" element={<Settings />} />
 </Route>`}
                 </code>
               </pre>
+              <Link to="/dashboard" className="btn btn-primary btn-sm">Xem ví dụ Dashboard</Link>
             </div>
           </div>
           

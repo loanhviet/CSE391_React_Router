@@ -14,6 +14,11 @@ import ProductDetailPage from './pages/ProductDetailPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Breadcrumb from './components/Breadcrumb';
+import DashboardLayout from './components/DashboardLayout';
+import Overview from './pages/dashboard/Overview';
+import Analytics from './pages/dashboard/Analytics';
+import Settings from './pages/dashboard/Settings';
+import Profile from './pages/dashboard/Profile';
 
 // For theoretical discussion, please see the accompanying notes or chat.
 // Key differences v5 vs v6:
@@ -37,6 +42,14 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/products/:id" element={<ProductDetailPage />} />
+          
+          {/* Nested Routes Example */}
+          <Route path="/dashboard" element={<DashboardLayout />}>
+            <Route index element={<Overview />} />
+            <Route path="analytics" element={<Analytics />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="profile" element={<Profile />} />
+          </Route>
           
           {/* Example of a redirect: if someone goes to /home, redirect to / */}
           <Route path="/home" element={<Navigate to="/" replace />} />
