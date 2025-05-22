@@ -35,17 +35,17 @@ function ContactPage() {
     <div className="main-content page-transition">
       <div className="container">
         <header className="page-header">
-          <h1>Contact Us</h1>
-          <p>We'd love to hear from you! Send us a message using the form below.</p>
+          <h1>Liên hệ với chúng tôi</h1>
+          <p>Chúng tôi rất mong nhận được phản hồi từ bạn! Hãy gửi tin nhắn qua biểu mẫu dưới đây.</p>
         </header>
         
         {submitted ? (
           <div className="card">
-            <h3>Message Sent!</h3>
-            <p>Thank you for your message. We'll get back to you soon.</p>
-            <p>Redirecting to home page in 3 seconds...</p>
+            <h3>Tin nhắn đã gửi!</h3>
+            <p>Cảm ơn bạn đã gửi tin nhắn. Chúng tôi sẽ liên hệ với bạn sớm.</p>
+            <p>Chuyển hướng về trang chủ trong 3 giây...</p>
             <button className="btn btn-primary" onClick={() => navigate('/')}>
-              Go to Home Now
+              Về trang chủ ngay
             </button>
           </div>
         ) : (
@@ -53,7 +53,7 @@ function ContactPage() {
             <div className="col-2">
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <label htmlFor="name" className="form-label">Name</label>
+                  <label htmlFor="name" className="form-label">Họ tên</label>
                   <input 
                     type="text"
                     id="name"
@@ -79,7 +79,7 @@ function ContactPage() {
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="subject" className="form-label">Subject</label>
+                  <label htmlFor="subject" className="form-label">Tiêu đề</label>
                   <input 
                     type="text"
                     id="subject"
@@ -92,7 +92,7 @@ function ContactPage() {
                 </div>
                 
                 <div className="form-group">
-                  <label htmlFor="message" className="form-label">Message</label>
+                  <label htmlFor="message" className="form-label">Nội dung</label>
                   <textarea 
                     id="message"
                     name="message"
@@ -105,7 +105,7 @@ function ContactPage() {
                 </div>
                 
                 <button type="submit" className="btn btn-primary">
-                  Send Message
+                  Gửi tin nhắn
                 </button>
               </form>
             </div>

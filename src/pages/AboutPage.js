@@ -5,36 +5,36 @@ function AboutPage() {
     <div className="main-content page-transition">
       <div className="container">
         <header className="page-header">
-          <h1>About This Project</h1>
-          <p>A demonstration of React Router v6 features and implementation.</p>
+          <h1>Giới thiệu dự án</h1>
+          <p>Ứng dụng minh họa các tính năng và cách triển khai của React Router v6.</p>
         </header>
         
         <div className="row">
           <div className="col">
             <div className="card">
-              <h3>Project Purpose</h3>
-              <p>This project was built to showcase the features of React Router v6+ and demonstrate how it can be used to create a seamless single page application experience.</p>
-              <p>The demo includes examples of:</p>
+              <h3>Mục đích dự án</h3>
+              <p>Dự án này được xây dựng để trình bày các tính năng của React Router v6+ và minh họa cách sử dụng để tạo trải nghiệm ứng dụng trang đơn liền mạch.</p>
+              <p>Demo này bao gồm các ví dụ về:</p>
               <ul>
-                <li>Basic routing with <code>BrowserRouter</code>, <code>Routes</code>, and <code>Route</code></li>
-                <li>Link navigation with <code>Link</code></li>
-                <li>Programmatic navigation with <code>useNavigate</code></li>
-                <li>Dynamic routes with <code>:paramName</code> syntax</li>
-                <li>Redirects with <code>Navigate</code></li>
+                <li>Định tuyến cơ bản với <code>BrowserRouter</code>, <code>Routes</code>, và <code>Route</code></li>
+                <li>Điều hướng đường dẫn với <code>Link</code></li>
+                <li>Điều hướng lập trình với <code>useNavigate</code></li>
+                <li>Định tuyến động với cú pháp <code>:paramName</code></li>
+                <li>Chuyển hướng với <code>Navigate</code></li>
               </ul>
             </div>
           </div>
           
           <div className="col">
             <div className="card">
-              <h3>Technologies Used</h3>
-              <p>This project was built with:</p>
+              <h3>Công nghệ sử dụng</h3>
+              <p>Dự án này được xây dựng với:</p>
               <ul>
                 <li>React 18+</li>
                 <li>React Router v6+</li>
                 <li>CSS3</li>
               </ul>
-              <p>No additional libraries were used to keep the focus on React Router's functionality.</p>
+              <p>Không sử dụng thư viện bổ sung để giữ trọng tâm vào chức năng của React Router.</p>
             </div>
           </div>
         </div>

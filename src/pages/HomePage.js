@@ -8,30 +8,30 @@ function HomePage() {
     <div className="main-content page-transition">
       <div className="container">
         <header className="page-header">
-          <h1>Welcome to React Router Demo</h1>
-          <p>A demonstration of React Router v6 capabilities for single page applications.</p>
+          <h1>React Router Demo</h1>
+          <p>Minh họa các tính năng của React Router v6.</p>
         </header>
         
         {/* Featured Products */}
-        <h2>Featured Products</h2>
+        <h2>Sản phẩm nổi bật</h2>
         <div className="products-grid">
           <div className="product-card">
             <div className="product-image">P1</div>
             <div className="product-info">
-              <h3 className="product-title">Product 1</h3>
-              <p className="product-description">Example product to demonstrate route parameters.</p>
-              <p className="product-price">$99.99</p>
-              <Link to="/products/1" className="view-button">View Details</Link>
+              <h3 className="product-title">Sản phẩm 1</h3>
+              <p className="product-description">Sản phẩm mẫu để minh họa tham số định tuyến.</p>
+              <p className="product-price">99.99$</p>
+              <Link to="/products/1" className="view-button">Xem chi tiết</Link>
             </div>
           </div>
           
           <div className="product-card">
             <div className="product-image">P2</div>
             <div className="product-info">
-              <h3 className="product-title">Product 2</h3>
-              <p className="product-description">Another example with different route parameter.</p>
-              <p className="product-price">$149.99</p>
-              <Link to="/products/2" className="view-button">View Details</Link>
+              <h3 className="product-title">Sản phẩm 2</h3>
+              <p className="product-description">Một ví dụ khác với tham số định tuyến khác nhau.</p>
+              <p className="product-price">149.99$</p>
+              <Link to="/products/2" className="view-button">Xem chi tiết</Link>
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@ function HomePage() {
         </div>
         
         {/* Feature Cards */}
-        <h2>Features</h2>
+        <h2>Tính năng</h2>
         <div className="row">
           <div className="col">
             <div className="card">
